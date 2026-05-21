@@ -8,67 +8,42 @@
     <style>
         :root { --soft-pink: #ffafbd; --rose: #ffc3a0; --dark-love: #1a0a0d; --gold: #D4AF37; }
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-        
-        body { 
-            background: linear-gradient(135deg, #1a0a0d 0%, #2d0f14 100%);
-            color: white; font-family: 'Poppins', sans-serif; overflow-x: hidden;
-            background-attachment: fixed;
-        }
-
-        /* Floating Hearts Animation */
+        body { background: linear-gradient(135deg, #1a0a0d 0%, #2d0f14 100%); color: white; font-family: 'Poppins', sans-serif; overflow-x: hidden; background-attachment: fixed; }
         .bg-animate { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; }
         .heart-float { position: absolute; color: rgba(255, 175, 189, 0.3); animation: floatUp 10s infinite linear; bottom: -10%; }
         @keyframes floatUp { from { transform: translateY(0) rotate(0deg); opacity: 1; } to { transform: translateY(-120vh) rotate(360deg); opacity: 0; } }
-
         section { min-height: 100vh; padding: 40px 20px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; opacity: 0; transform: translateY(30px); transition: 1s all ease; }
         section.visible { opacity: 1; transform: translateY(0); }
-
-        .glass-card { 
-            background: rgba(255, 255, 255, 0.07); backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.1); padding: 40px 25px;
-            border-radius: 30px; max-width: 450px; width: 100%;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-        }
-
+        .glass-card { background: rgba(255, 255, 255, 0.07); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.1); padding: 40px 25px; border-radius: 30px; max-width: 450px; width: 100%; box-shadow: 0 15px 35px rgba(0,0,0,0.4); }
         h2 { font-family: 'Dancing Script', cursive; color: var(--soft-pink); font-size: 2.8rem; margin-bottom: 20px; }
         .btn { background: linear-gradient(to right, #ffafbd, #ffc3a0); color: #5d1a26; padding: 12px 35px; border-radius: 50px; text-decoration: none; font-weight: 600; margin-top: 20px; cursor: pointer; border:none; transition: 0.3s; }
-        
         #game-box { position: relative; height: 150px; display: flex; justify-content: center; align-items: center; gap: 20px; }
         #no-btn { position: relative; transition: 0.2s ease; z-index: 10; }
-
         #loader { position: fixed; inset: 0; background: var(--dark-love); z-index: 2000; display: flex; flex-direction: column; justify-content: center; align-items: center; }
         .museum-img { width: 100%; border-radius: 20px; border: 2px solid var(--soft-pink); margin-top: 15px; }
     </style>
 </head>
 <body>
-
     <div id="loader">
         <h1 style="font-family: 'Dancing Script'; color: var(--soft-pink); font-size: 3rem;">Hii, Navya...</h1>
         <button class="btn" onclick="start()">Open Your World ✨</button>
     </div>
-
     <div class="bg-animate" id="bg-stars"></div>
-
     <section id="s1">
         <div class="glass-card">
             <h2>Baat band hai, par yaadein nahi...</h2>
             <p>Humein baat kiye zamana ho gaya, par mere liye tum aaj bhi wahi ho—Special.</p>
-            
             <div style="margin-top: 25px;">
-                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2SST9p8pU9pU6pYv4qX1qS?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2SST9p8pU7p6KpYv4qE1qS?utm_source=generator" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             </div>
-            <p style="margin-top:10px; font-size: 0.8rem; color: var(--soft-pink);">Gaana play karke niche scroll karo ✨</p>
         </div>
     </section>
-
     <section id="s2">
         <div class="glass-card">
             <h2>Nakhre Wali Princess</h2>
             <p>Tum mujhe hamesha <b>"Nakhre Wali Princess"</b> bulati thi na? Woh nakhre aaj bhi yaad aate hain.</p>
-            <p style="margin-top:15px; color: var(--gold);">Kash wo purane din wapas aa pate. ✨</p>
         </div>
     </section>
-
     <section id="s3">
         <div class="glass-card">
             <h2>The Museum of Us</h2>
@@ -76,24 +51,13 @@
             <p style="margin-top:15px; font-style: italic;">"Tumhari aankhein... inme poori duniya dikhti thi."</p>
         </div>
     </section>
-
     <section id="s4">
         <div class="glass-card" style="border: 2px solid var(--soft-pink);">
             <h2 style="font-size: 3.5rem;">Happy Birthday! 🎂</h2>
-            <p>Maine socha tumhare birthday par kuch alag karun. Ye poori website sirf tumhare liye banayi hai, Navya.</p>
-            <div style="font-size: 3rem; margin: 20px;">🌸👸🌸</div>
+            <p>Poori website sirf tumhare liye banayi hai, Navya.</p>
             <p>"Hamesha hasti raho, varna gusse mein tum 'Marnehi lagti ho' 😂"</p>
         </div>
     </section>
-
-    <section id="s5">
-        <div class="glass-card">
-            <h2>Aesthetic Princess</h2>
-            <img src="butterfly.jpg" class="museum-img">
-            <p style="margin-top:15px;">"Tum define karti ho ki 'Classy' kya hota hai."</p>
-        </div>
-    </section>
-
     <section id="s6">
         <div class="glass-card">
             <h2>Sach batana...</h2>
@@ -104,9 +68,7 @@
             </div>
         </div>
     </section>
-
     <script>
-        // Floating Hearts Logic
         const bg = document.getElementById('bg-stars');
         for (let i = 0; i < 20; i++) {
             let heart = document.createElement('div');
@@ -117,13 +79,10 @@
             heart.style.animationDelay = Math.random() * 5 + 's';
             bg.appendChild(heart);
         }
-
         function start() {
             document.getElementById('loader').style.display = 'none';
             reveal();
         }
-
-        // Running "No" Button Logic
         function moveButton() {
             const btn = document.getElementById('no-btn');
             const x = Math.random() * (window.innerWidth - 150);
@@ -132,7 +91,17 @@
             btn.style.left = x + 'px';
             btn.style.top = y + 'px';
         }
-
         function reveal() {
-            var
+            var sections = document.querySelectorAll('section');
+            for (var i = 0; i < sections.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = sections[i].getBoundingClientRect().top;
+                if (elementTop < windowHeight - 100) { sections[i].classList.add('visible'); }
+            }
+        }
+        window.addEventListener('scroll', reveal);
+    </script>
+</body>
+</html>
+
 
