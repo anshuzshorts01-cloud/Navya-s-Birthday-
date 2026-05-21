@@ -3,116 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For My Navya ❤️</title>
+    <title>The Navya Experience | 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body {
-            margin: 0;
-            background: #1a1a1a;
-            color: white;
-            font-family: 'Poppins', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-            text-align: center;
-        }
+        :root { --gold: #D4AF37; --rose: #FF69B4; --dark: #0a0a0a; --glass: rgba(255, 255, 255, 0.05); }
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { background-color: var(--dark); color: white; font-family: 'Poppins', sans-serif; overflow-x: hidden; }
 
-        .container {
-            width: 90%;
-            max-width: 500px;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 105, 180, 0.3);
-        }
+        section { min-height: 100vh; padding: 60px 20px; display: flex; flex-direction: column; justify-content: center; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05); opacity: 0; transform: translateY(30px); transition: 1s all ease; }
+        section.visible { opacity: 1; transform: translateY(0); }
 
-        h1 { color: #ff4d6d; font-size: 1.8rem; margin-bottom: 10px; }
+        .glass-card { background: var(--glass); backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.1); padding: 30px; border-radius: 20px; max-width: 500px; width: 100%; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        h2 { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 2rem; margin-bottom: 15px; }
+        .btn { background: var(--gold); color: black; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; margin-top: 20px; cursor: pointer; border:none; }
         
-        .shayari {
-            font-style: italic;
-            font-size: 1rem;
-            color: #ffb3c1;
-            margin: 15px 0;
-            line-height: 1.6;
-        }
-
-        #letter-section { display: none; margin-top: 20px; }
-
-        .btn {
-            background: #ff4d6d;
-            color: white;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: 0.3s;
-            margin-top: 10px;
-        }
-
-        .btn:hover { background: #ff758f; transform: scale(1.05); }
-
-        .confetti {
-            position: absolute;
-            top: -10px;
-            width: 10px;
-            height: 10px;
-            animation: fall 4s linear infinite;
-        }
-
-        @keyframes fall {
-            to { transform: translateY(110vh) rotate(360deg); }
-        }
+        .museum-img { width: 100%; border-radius: 15px; border: 1px solid var(--gold); margin-top: 15px; box-shadow: 0 0 15px var(--gold); }
+        .mood-slider { width: 100%; accent-color: var(--rose); margin: 20px 0; cursor: pointer; }
+        #loader { position: fixed; inset: 0; background: black; z-index: 1000; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; }
+        
+        /* Floating hearts animation */
+        @keyframes float { 0% { transform: translateY(0); } 50% { transform: translateY(-20px); } 100% { transform: translateY(0); } }
+        .heart { font-size: 3rem; animation: float 3s ease-in-out infinite; }
+        
+        #bg-music { display: none; }
     </style>
 </head>
 <body>
 
-    <div class="container" id="main-box">
-        <div id="intro-section">
-            <h1>Happy Birthday, Navya! 🎂</h1>
-            <p class="shayari">
-                "Tumhe dekha toh ye khayal aaya... <br>
-                Zindagi dhoop, tum ghana saaya." <br><br>
-                Pata hai humari ladai hui hai, par aaj ke din sab bhul kar sirf smile karo! 😊
-            </p>
-            <button class="btn" onclick="openSurprise()">Ek Surprise hai, click karo</button>
-        </div>
-
-        <div id="letter-section">
-            <h1>I'm Sorry, Navi! ❤️</h1>
-            <p style="text-align: justify; line-height: 1.5; font-size: 0.95rem;">
-                Navya, main jaanta hoon ki pichle kuch din humare beech sahi nahi rahe. Maine galti ki, shayad mera tareeka galat tha, par mera iraada tumhe dukh pahunchana kabhi nahi tha. <br><br>
-                Tumhare bina sab adhoora lagta hai. Aaj tumhara din hai, aur main chahta hoon ki tum duniya ki sabse khush ladki bano. Kya tum mujhe maaf karke ek nayi shuruaat karogi?
-            </p>
-            <p class="shayari" style="font-size: 0.9rem;">
-                "Narazgi ko badlo na nafrat mein kabhi, <br>
-                Hum toh sirf tumhare hain, bas tumhare hi rahenge."
-            </p>
-            <button class="btn" onclick="celebrate()">For You ✨</button>
-        </div>
+    <div id="loader">
+        <div class="heart">❤️</div>
+        <h1 style="color:var(--gold); margin: 20px 0;">For My Navya</h1>
+        <p style="margin-bottom: 20px;">I've spent some time building this for you. <br>Please turn up the volume. 🎵</p>
+        <button class="btn" onclick="start()">Enter The Experience ✨</button>
     </div>
 
+    <audio id="bg-music" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+
+    <section id="s1">
+        <h2>The Navya Experience</h2>
+        <div class="glass-card">
+            <p>Accessing the world of my <b>Nakhre Wali Princess</b>...</p>
+            <p style="margin-top:10px; font-size: 0.8rem; color: #ffb3c1;">Scroll down to begin the journey</p>
+        </div>
+    </section>
+
+    <section id="s2">
+        <div class="glass-card">
+            <h2>The Mood Switch</h2>
+            <p id="m-text" style="font-size: 1.2rem; margin-bottom: 10px;">Current Vibe: Sweet ✨</p>
+            <input type="range" min="1" max="100" value="50" class="mood-slider" oninput="updateMood(this.value)">
+            <p id="m-status" style="color: var(--rose); font-weight: bold; min-height: 24px;"></p>
+        </div>
+    </section>
+
+    <section id="s3">
+        <h2>The Museum of Us</h2>
+        <div class="glass-card">
+            <img src="eyes.jpg" class="museum-img" alt="Your Beautiful Eyes">
+            <p style="margin-top:15px; font-style: italic;">"Curator's Note: I can write a thousand lines, but none as deep as these eyes."</p>
+        </div>
+    </section>
+
+    <section id="s4">
+        <div class="glass-card">
+            <h2>If You Were...</h2>
+            <p style="margin: 10px 0;">🌸 <b>A Flower:</b> A Rose (Beautiful but sharp gussa!)</p>
+            <p style="margin: 10px 0;">🎶 <b>A Song:</b> Mann Mera (Loop pe chalne wali vibe)</p>
+            <p style="margin: 10px 0;">🦋 <b>A Filter:</b> Butterfly (Aesthetic and Free)</p>
+        </div>
+    </section>
+
+    <section id="s5">
+        <div class="glass-card">
+            <h2>3 AM Memories</h2>
+            <p style="font-size: 1.8rem; color: var(--gold); font-weight: bold;">"Neend aarha hh hmko abb..."</p>
+            <p style="margin-top:10px;">Pata nahi kyun, ye boring line bhi tumhare munh se acchi lagti hai. ❤️</p>
+        </div>
+    </section>
+
+    <section id="s6">
+        <div class="glass-card">
+            <h2>The Healing Wall (I'm Sorry)</h2>
+            <p>Navya, I know I messed up. Hum ladte hain, hum gussa hote hain... par end mein hum saath hote hain. Sorry for everything. I can't afford to lose my favorite person.</p>
+            <p style="margin-top:15px; font-weight: bold; color: var(--gold);">"Tumse hi din hota hai, tumse hi raat..."</p>
+        </div>
+    </section>
+
+    <section id="s7">
+        <h2>Aesthetic Princess</h2>
+        <div class="glass-card">
+            <img src="butterfly.jpg" class="museum-img" alt="Aesthetic Navya">
+            <p style="margin-top:15px;">You define "Classy" in every way.</p>
+        </div>
+    </section>
+
+    <section id="s8">
+        <div class="glass-card">
+            <h2>The Jharkhand Special Quiz</h2>
+            <p>Who is the most nakhrili and cutest person in Jharkhand?</p>
+            <button class="btn" onclick="alert('BINGO! It\'s Navya!')">Check Answer</button>
+        </div>
+    </section>
+
+    <section id="s9">
+        <div class="glass-card">
+            <h2>My Promise</h2>
+            <p>Main promise karta hoon ki chahe kitni bhi ladai ho, main humesha tumhe manane pehla kadam uthaunga. Kyunki tumse ladne mein bhi sukoon hai. 🤝❤️</p>
+        </div>
+    </section>
+
+    <section id="s10">
+        <div class="glass-card">
+            <h2>Infinity & Beyond</h2>
+            <p>Happy Birthday, Navya. <br>Hamesha hasti raho (Kyunki gusse mein tum 'Marnehi lagti ho' 😂)</p>
+            <div style="font-size: 3.5rem; margin-top: 20px;">♾️❤️</div>
+            <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.5;">Crafted with love by Anshuz</p>
+        </div>
+    </section>
+
     <script>
-        function openSurprise() {
-            document.getElementById('intro-section').style.display = 'none';
-            document.getElementById('letter-section').style.display = 'block';
+        function start() {
+            document.getElementById('loader').style.display = 'none';
+            document.getElementById('bg-music').play();
+            reveal();
         }
 
-        function celebrate() {
-            alert("Happy Birthday Navya! Ab gussa thuk do? ❤️");
-            for(let i=0; i<80; i++) {
-                let confetti = document.createElement('div');
-                confetti.classList.add('confetti');
-                confetti.innerHTML = '❤️';
-                confetti.style.left = Math.random() * 100 + 'vw';
-                confetti.style.fontSize = Math.random() * 20 + 10 + 'px';
-                confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
-                confetti.style.opacity = Math.random();
-                document.body.appendChild(confetti);
+        function updateMood(val) {
+            let s = document.getElementById('m-status');
+            let t = document.getElementById('m-text');
+            if(val < 35) { 
+                s.innerText = "Mood: Danger Zone 🚨"; 
+                t.innerHTML = "<span style='color:red;'>Navi: Marnehiii Lagenge Abhiiii! 🥊</span>"; 
+            }
+            else if(val > 65) { 
+                s.innerText = "Mood: Royal Princess 👑"; 
+                t.innerHTML = "<span style='color:var(--rose);'>Navi: Sabse pyaari nakhre wali!</span>"; 
+            }
+            else { 
+                s.innerText = "Mood: Natural ✨"; 
+                t.innerText = "Navi: Thoda thoda gussa, thoda thoda pyaar."; 
             }
         }
+
+        function reveal() {
+            var sections = document.querySelectorAll('section');
+            for (var i = 0; i < sections.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = sections[i].getBoundingClientRect().top;
+                if (elementTop < windowHeight - 100) { 
+                    sections[i].classList.add('visible'); 
+                }
+            }
+        }
+        window.addEventListener('scroll', reveal);
     </script>
 </body>
 </html>
+
