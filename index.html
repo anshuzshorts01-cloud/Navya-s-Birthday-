@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Navya ❤️</title>
+    <style>
+        body {
+            margin: 0;
+            background: #1a1a1a;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 500px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 105, 180, 0.3);
+        }
+
+        h1 { color: #ff4d6d; font-size: 1.8rem; margin-bottom: 10px; }
+        
+        .shayari {
+            font-style: italic;
+            font-size: 1rem;
+            color: #ffb3c1;
+            margin: 15px 0;
+            line-height: 1.6;
+        }
+
+        #letter-section { display: none; margin-top: 20px; }
+
+        .btn {
+            background: #ff4d6d;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn:hover { background: #ff758f; transform: scale(1.05); }
+
+        .confetti {
+            position: absolute;
+            top: -10px;
+            width: 10px;
+            height: 10px;
+            animation: fall 4s linear infinite;
+        }
+
+        @keyframes fall {
+            to { transform: translateY(110vh) rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="main-box">
+        <div id="intro-section">
+            <h1>Happy Birthday, Navya! 🎂</h1>
+            <p class="shayari">
+                "Tumhe dekha toh ye khayal aaya... <br>
+                Zindagi dhoop, tum ghana saaya." <br><br>
+                Pata hai humari ladai hui hai, par aaj ke din sab bhul kar sirf smile karo! 😊
+            </p>
+            <button class="btn" onclick="openSurprise()">Ek Surprise hai, click karo</button>
+        </div>
+
+        <div id="letter-section">
+            <h1>I'm Sorry, Navi! ❤️</h1>
+            <p style="text-align: justify; line-height: 1.5; font-size: 0.95rem;">
+                Navya, main jaanta hoon ki pichle kuch din humare beech sahi nahi rahe. Maine galti ki, shayad mera tareeka galat tha, par mera iraada tumhe dukh pahunchana kabhi nahi tha. <br><br>
+                Tumhare bina sab adhoora lagta hai. Aaj tumhara din hai, aur main chahta hoon ki tum duniya ki sabse khush ladki bano. Kya tum mujhe maaf karke ek nayi shuruaat karogi?
+            </p>
+            <p class="shayari" style="font-size: 0.9rem;">
+                "Narazgi ko badlo na nafrat mein kabhi, <br>
+                Hum toh sirf tumhare hain, bas tumhare hi rahenge."
+            </p>
+            <button class="btn" onclick="celebrate()">For You ✨</button>
+        </div>
+    </div>
+
+    <script>
+        function openSurprise() {
+            document.getElementById('intro-section').style.display = 'none';
+            document.getElementById('letter-section').style.display = 'block';
+        }
+
+        function celebrate() {
+            alert("Happy Birthday Navya! Ab gussa thuk do? ❤️");
+            for(let i=0; i<80; i++) {
+                let confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                confetti.innerHTML = '❤️';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.fontSize = Math.random() * 20 + 10 + 'px';
+                confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
+                confetti.style.opacity = Math.random();
+                document.body.appendChild(confetti);
+            }
+        }
+    </script>
+</body>
+</html>
