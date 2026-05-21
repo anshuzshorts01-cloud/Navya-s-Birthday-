@@ -15,7 +15,7 @@
             background-attachment: fixed;
         }
 
-        /* Floating Animation Background */
+        /* Floating Hearts Animation */
         .bg-animate { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; }
         .heart-float { position: absolute; color: rgba(255, 175, 189, 0.3); animation: floatUp 10s infinite linear; bottom: -10%; }
         @keyframes floatUp { from { transform: translateY(0) rotate(0deg); opacity: 1; } to { transform: translateY(-120vh) rotate(360deg); opacity: 0; } }
@@ -32,11 +32,9 @@
 
         h2 { font-family: 'Dancing Script', cursive; color: var(--soft-pink); font-size: 2.8rem; margin-bottom: 20px; }
         .btn { background: linear-gradient(to right, #ffafbd, #ffc3a0); color: #5d1a26; padding: 12px 35px; border-radius: 50px; text-decoration: none; font-weight: 600; margin-top: 20px; cursor: pointer; border:none; transition: 0.3s; }
-        .btn:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(255, 175, 189, 0.5); }
-
-        /* Game Section Styles */
+        
         #game-box { position: relative; height: 150px; display: flex; justify-content: center; align-items: center; gap: 20px; }
-        #no-btn { position: relative; transition: 0.2s ease; }
+        #no-btn { position: relative; transition: 0.2s ease; z-index: 10; }
 
         #loader { position: fixed; inset: 0; background: var(--dark-love); z-index: 2000; display: flex; flex-direction: column; justify-content: center; align-items: center; }
         .museum-img { width: 100%; border-radius: 20px; border: 2px solid var(--soft-pink); margin-top: 15px; }
@@ -53,42 +51,53 @@
 
     <section id="s1">
         <div class="glass-card">
-            <h2>Humein baat kiye zamana ho gaya...</h2>
-            <p>Par aaj bhi kuch cheezein wahi hain. Tumhari wo yaadein aur mera tumhe yaad karne ka tarika.</p>
-            <p style="margin-top: 15px; font-size: 0.9rem; color: var(--soft-pink);">"Kyunki tum kal bhi khaas thi, aur aaj bhi ho."</p>
-            <button class="btn" onclick="playMusic()">▶ Play 'Mann Mera'</button>
+            <h2>Baat band hai, par yaadein nahi...</h2>
+            <p>Humein baat kiye zamana ho gaya, par mere liye tum aaj bhi wahi ho—Special.</p>
+            
+            <div style="margin-top: 25px;">
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2SST9p8pU9pU6pYv4qX1qS?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <p style="margin-top:10px; font-size: 0.8rem; color: var(--soft-pink);">Gaana play karke niche scroll karo ✨</p>
         </div>
     </section>
 
     <section id="s2">
         <div class="glass-card">
-            <h2>Meri Nakhre Wali Princess</h2>
-            <p>Yaad hai? Tum mujhe hamesha <b>"Nakhre Wali Princess"</b> bulati thi.</p>
-            <p style="margin-top:10px;">Aaj wo nakhre uthane wala koi nahi, par ye title aaj bhi tumhare naam hi hai. ✨</p>
+            <h2>Nakhre Wali Princess</h2>
+            <p>Tum mujhe hamesha <b>"Nakhre Wali Princess"</b> bulati thi na? Woh nakhre aaj bhi yaad aate hain.</p>
+            <p style="margin-top:15px; color: var(--gold);">Kash wo purane din wapas aa pate. ✨</p>
         </div>
     </section>
 
     <section id="s3">
-        <h2>Aesthetic Glimpse</h2>
         <div class="glass-card">
+            <h2>The Museum of Us</h2>
             <img src="eyes.jpg" class="museum-img">
-            <p style="margin-top:15px; font-style: italic;">"In aankhon ne bohot kuch dekha hai, par tumse pyaara kuch nahi."</p>
+            <p style="margin-top:15px; font-style: italic;">"Tumhari aankhein... inme poori duniya dikhti thi."</p>
         </div>
     </section>
 
     <section id="s4">
         <div class="glass-card" style="border: 2px solid var(--soft-pink);">
             <h2 style="font-size: 3.5rem;">Happy Birthday! 🎂</h2>
-            <p>Tumhare is din par maine socha tumhe ek chota sa tohfa doon... ye poori website sirf tumhare liye hai, Navya.</p>
+            <p>Maine socha tumhare birthday par kuch alag karun. Ye poori website sirf tumhare liye banayi hai, Navya.</p>
             <div style="font-size: 3rem; margin: 20px;">🌸👸🌸</div>
-            <p>"Tum hasti raho, varna gusse mein toh marne hi lagti ho 😂"</p>
+            <p>"Hamesha hasti raho, varna gusse mein tum 'Marnehi lagti ho' 😂"</p>
         </div>
     </section>
 
     <section id="s5">
         <div class="glass-card">
+            <h2>Aesthetic Princess</h2>
+            <img src="butterfly.jpg" class="museum-img">
+            <p style="margin-top:15px;">"Tum define karti ho ki 'Classy' kya hota hai."</p>
+        </div>
+    </section>
+
+    <section id="s6">
+        <div class="glass-card">
             <h2>Sach batana...</h2>
-            <p style="margin-bottom: 20px;">Kya tum mujhe ab bhi thoda sa pyaarr karti ho? 🥺</p>
+            <p style="margin-bottom: 20px;">Kya tum mujhe ab bhi thoda sa miss karti ho? 🥺</p>
             <div id="game-box">
                 <button class="btn" onclick="alert('I knew it! ❤️ Happy Birthday Princess!')" style="background: #ff4d6d; color: white;">Yes! 😍</button>
                 <button class="btn" id="no-btn" onmouseover="moveButton()" style="background: #444; color: white;">No ❌</button>
@@ -96,12 +105,8 @@
         </div>
     </section>
 
-    <div style="display:none;">
-        <iframe id="video-player" width="0" height="0" src="https://www.youtube.com/embed/1onhvVnL8B8?enablejsapi=1" frameborder="0"></iframe>
-    </div>
-
     <script>
-        // Create Floating Hearts
+        // Floating Hearts Logic
         const bg = document.getElementById('bg-stars');
         for (let i = 0; i < 20; i++) {
             let heart = document.createElement('div');
@@ -118,31 +123,16 @@
             reveal();
         }
 
-        function playMusic() {
-            var player = document.getElementById('video-player');
-            player.src += "&autoplay=1";
-            alert("Music started... ❤️");
-        }
-
+        // Running "No" Button Logic
         function moveButton() {
             const btn = document.getElementById('no-btn');
-            const x = Math.random() * (window.innerWidth - 100);
-            const y = Math.random() * (window.innerHeight - 100);
+            const x = Math.random() * (window.innerWidth - 150);
+            const y = Math.random() * (window.innerHeight - 150);
             btn.style.position = 'fixed';
             btn.style.left = x + 'px';
             btn.style.top = y + 'px';
         }
 
         function reveal() {
-            var sections = document.querySelectorAll('section');
-            for (var i = 0; i < sections.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = sections[i].getBoundingClientRect().top;
-                if (elementTop < windowHeight - 100) { sections[i].classList.add('visible'); }
-            }
-        }
-        window.addEventListener('scroll', reveal);
-    </script>
-</body>
-</html>
+            var
 
